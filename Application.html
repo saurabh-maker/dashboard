@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Candidate Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <div class="filters-container">
+            <input type="file" id="csvFileInput" accept=".csv" class="filter">
+            <select id="companyFilter" class="filter">
+                <option value="">Filter by Company</option>
+            </select>
+            <select id="locationFilter" class="filter">
+                <option value="">Filter by Location</option>
+            </select>
+            <select id="statusFilter" class="filter">
+                <option value="">Filter by Status</option>
+            </select>
+            <button id="clearFilters" class="filter">Clear Filters</button>
+            <div id="totalCandidates" class="total-candidates"></div>
+        </div>
+
+        <div class="main-content">
+            <div class="left-column">
+                <table id="profilesTable" class="profiles-table">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Current Title</th>
+                            <th>Current Company</th>
+                            <th>Location</th>
+                            <th>Profile URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamically filled based on filters -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="right-column">
+                <div id="dashboard" class="dashboard">
+                    <!-- Dynamically filled based on CSV input -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
